@@ -42,10 +42,13 @@ pipeline {
      * Note that we also init the submodule(s).
      */
 
-  stages {
     stage('Checkout Scm') {
       steps {
-        checkout([$class: 'GitSCM', branches: [[name: '**']], extensions: [[$class: 'CheckoutOption'], [$class: 'CloneOption', noTags: false, reference: '', shallow: false], [$class: 'SubmoduleOption', disableSubmodules: false, parentCredentials: false, recursiveSubmodules: true, reference: '', trackingSubmodules: false]], userRemoteConfigs: [[url: 'https://github.com/qdzlug/kic-reference-architectures']]])
+        checkout([$class: 'GitSCM', branches: [[name: 'fix-107 extensions: [[$class: 'CheckoutOption'],
+        [$class: 'CloneOption', noTags: false, reference: '', shallow: false], [$class: 'SubmoduleOption',
+        disableSubmodules: false, parentCredentials: false, recursiveSubmodules: true, reference: '',
+        trackingSubmodules: false]],
+        userRemoteConfigs: [[url: 'https://github.com/qdzlug/kic-reference-architectures']]])
       }
     }
 
