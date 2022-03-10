@@ -40,7 +40,7 @@ pipeline {
 
     stage('Checkout Scm') {
       steps {
-        checkout([$class: 'GitSCM', branches: [[name: 'fix-107']], extensions: [[$class: 'CheckoutOption'],
+        checkout([$class: 'GitSCM', branches: [[name: '**']], extensions: [[$class: 'CheckoutOption'],
         [$class: 'CloneOption', noTags: false, reference: '', shallow: false],
         [$class: 'SubmoduleOption', disableSubmodules: false, parentCredentials: false,
         recursiveSubmodules: true, reference: '', trackingSubmodules: false]],
