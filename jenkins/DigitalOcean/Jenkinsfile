@@ -102,6 +102,7 @@ pipeline {
          */
 
         sh '''
+          ls -alt $WORKSPACE/bin
           $WORKSPACE/bin/setup_venv.sh
            '''
 
