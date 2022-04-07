@@ -76,6 +76,9 @@ pipeline {
             sudo apt -y install figlet openjdk-11-jdk make docker.io
             # Upgrade everything; we always run with latest patches.
             sudo apt -y upgrade
+            # If we are using docker, we need to be in the group
+            sudo usermod -a -G docker $USER
+            newgrp docker
             '''
       }
     }
